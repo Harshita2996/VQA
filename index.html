@@ -10,7 +10,7 @@
  <body>
   <div class="container">
    <div class="table-responsive">
-    <h1>CSV File to HTML Table Using AJAX jQuery5</h1>
+    <h1>CSV File to HTML Table Using AJAX jQuery6</h1>
     <br />
     <div>
      <button type="button" name="load_data" id="load_data" class="btn btn-info">Load Data</button>
@@ -27,7 +27,7 @@
 $(document).ready(function(){
  $('#load_data').click(function(){
   $.ajax({
-   url:"https://cors-anywhere.herokuapp.com/https://www.cse.iitb.ac.in/~mayankk/try.csv",
+   url:"https://cors-anywhere.herokuapp.com/https://competitions.codalab.org/competitions/29930/results/48980/data",
    dataType:"text",
    success:function(data)
    {
