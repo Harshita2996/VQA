@@ -213,7 +213,7 @@
 <!--------------------------------------------LEADERBOARD SECTION STARTS--------------------------------------------------->
 
 <div id="leaderboard" class="container padding-64 backgroundTheme center">
-  <h2 id="headings"><span class="bottombar">LEADERBOARD3</span></h2>
+  <h2 id="headings"><span class="bottombar">LEADERBOARD4</span></h2>
   <div class ="setFontSize"> <span class="headingInSection center"><h2 id="leaderboard1">OKVQA</h2></span></div>
   <div id="okvqa_leaderboard_table"></div>
   <div class ="setFontSize"> <span class="headingInSection center"><h2 id="leaderboard2">S3VQA</h2></span></div>
@@ -277,30 +277,10 @@
 
 <!-------java script-->
 <script>
-  
-   $(document).ready(function() {
-    (function() {
-      var cors_api_host = 'competitions.codalab.org/competitions/29930/results/48980/data';
-      var cors_api_url = 'https://' + cors_api_host + '/';
-      var slice = [].slice;
-      var origin = window.location.protocol + '//' + window.location.host;
-      var open = XMLHttpRequest.prototype.open;
-      XMLHttpRequest.prototype.open = function() {
-          var args = slice.call(arguments);
-          var targetOrigin = /^https?:\/\/([^\/]+)/i.exec(args[1]);
-          if (targetOrigin && targetOrigin[0].toLowerCase() !== origin &&
-              targetOrigin[1] !== cors_api_host) {
-              args[1] = cors_api_url + args[1];
-          }
-          return open.apply(this, args);
-      };
-  })();
-  });
-
 $(document).ready(function(){
   $('.header').ready(function(){
    $.ajax({
-    url:"",
+    url:"https://competitions.codalab.org/competitions/29930/results/48980/data",
     dataType:"text",
     success:function(data)
     {
@@ -334,7 +314,8 @@ $(document).ready(function(){
  $(document).ready(function(){
   $('.header').ready(function(){
    $.ajax({
-    url:"https://competitions.codalab.org/competitions/29930/results/48981/data",
+    headers:{'Access-control-Allow-Origin' : '*'},
+    url:"https://competitions/29930/results/48981/data",
     dataType:"text",
     success:function(data)
     {
