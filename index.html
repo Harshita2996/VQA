@@ -211,7 +211,7 @@
 <!--------------------------------------------LEADERBOARD SECTION STARTS--------------------------------------------------->
 
 <div id="leaderboard" class="container padding-64 backgroundTheme center">
-  <h2 id="headings"><span class="bottombar">LEADERBOARD12</span></h2>
+  <h2 id="headings"><span class="bottombar">LEADERBOARD13</span></h2>
   <div class ="setFontSize"> <span class="headingInSection center"><h2 id="leaderboard1">OKVQA<sub>S3</sub></h2></span></div>
   <div id="okvqa_leaderboard_table"></div>
   <div class ="setFontSize"> <span class="headingInSection center"><h2 id="leaderboard2">S3VQA</h2></span></div>
@@ -273,73 +273,84 @@
 </body>
 </html>
 
+!-------java script-->
 <script>
-
-     $(document).ready(function(){
-     $('.header').ready(function(){
-      $.ajax({
-       url:"okvqa.csv",
-       dataType:"text",
-       success:function(data)
-       {
-        var employee_data = data.split(/\r?\n|\r/);
-        var table_data = '<table class="styled-table">';
-        for(var count = 0; count<employee_data.length; count++)
-        {
-         var cell_data = employee_data[count].split(",");
-         table_data += '<tr>';
-         for(var cell_count=0; cell_count<cell_data.length; cell_count++)
-         {
+$(document).ready(function(){
+  $('.header').ready(function(){
+   $.ajax({
+    url:"1.csv",
+    dataType:"text",
+    success:function(data)
+    {
+     var employee_data = data.split(/\r?\n|\r/);
+     var table_data = '<table class="styled-table">';
+     for(var count = 0; count<employee_data.length; count++)
+     {
+      var cell_data = employee_data[count].split(",");
+      table_data += '<tr>';
+      for(var cell_count=0; cell_count<cell_data.length; cell_count++)
+      {
+        if(cell_count === 0){
           if(count === 0)
           {
-           table_data += '<th>'+cell_data[cell_count]+'</th>';
+            table_data += '<th>'+'#'+'</th>';
           }
           else if(cell_data[cell_count] != 0)
           {
-           table_data += '<td>'+cell_data[cell_count]+'</td>';
+            table_data += '<td>'+cell_count+'</td>';
           }
-         }
-         table_data += '</tr>';
-        }
-        table_data += '</table>';
-        $('#okvqa_leaderboard_table').html(table_data);
-       }
-      });
-     });
-     
-    });
-
-    $(document).ready(function(){
-     $('.header').ready(function(){
-      $.ajax({
-       url:"s3vqa.csv",
-       dataType:"text",
-       success:function(data)
-       {
-        var employee_data = data.split(/\r?\n|\r/);
-        var table_data = '<table class="styled-table">';
-        for(var count = 0; count<employee_data.length; count++)
-        {
-         var cell_data = employee_data[count].split(",");
-         table_data += '<tr>';
-         for(var cell_count=0; cell_count<cell_data.length; cell_count++)
-         {
+        }else{
           if(count === 0)
           {
-           table_data += '<th>'+cell_data[cell_count]+'</th>';
+            table_data += '<th>'+cell_data[cell_count]+'</th>';
           }
           else if(cell_data[cell_count] != 0)
           {
-           table_data += '<td>'+cell_data[cell_count]+'</td>';
+            table_data += '<td>'+cell_data[cell_count]+'</td>';
           }
-         }
-         table_data += '</tr>';
         }
-        table_data += '</table>';
-        $('#s3vqa_leaderboard_table').html(table_data);
+      }
+      table_data += '</tr>';
+     }
+     table_data += '</table>';
+     $('#okvqa_leaderboard_table').html(table_data);
+    }
+   });
+  });  
+ });
+
+ $(document).ready(function(){
+  $('.header').ready(function(){
+   $.ajax({
+    url:"2.csv",
+    dataType:"text",
+    success:function(data)
+    {
+     var employee_data = data.split(/\r?\n|\r/);
+     var table_data = '<table class="styled-table">';
+     for(var count = 0; count<employee_data.length; count++)
+     {
+      var cell_data = employee_data[count].split(",");
+      table_data += '<tr>';
+      for(var cell_count=0; cell_count<cell_data.length; cell_count++)
+      {
+       if(count === 0)
+       {
+        table_data += '<th>'+cell_data[cell_count]+'</th>';
        }
-      });
-     });
-     
-    });
+       else if(cell_data[cell_count] != 0)
+       {
+        table_data += '<td>'+cell_data[cell_count]+'</td>';
+       }
+      }
+      table_data += '</tr>';
+     }
+     table_data += '</table>';
+     $('#s3vqa_leaderboard_table').html(table_data);
+    }
+   });
+  });
+  
+ });
+
 </script>
