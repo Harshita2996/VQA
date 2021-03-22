@@ -21,7 +21,7 @@ $(document).ready(function(){
                }
                else if(cell_data[cell_count] != 0)
                {
-               table_data += '<td>'+cell_count+'</td>';
+               table_data += '<td>'+count+'</td>';
                }
           }else{ 
                if(count === 0)
@@ -67,7 +67,7 @@ $(document).ready(function(){
                }
                else if(cell_data[cell_count] != 0)
                {
-               table_data += '<td>'+cell_count+'</td>';
+               table_data += '<td>'+count+'</td>';
                }
           }else{ 
                if(count === 0)
