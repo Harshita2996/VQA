@@ -204,8 +204,6 @@
         Follow the below link to access the challenge : 
       </p>
       <div class="center"><a class="dataLink" href="https://competitions.codalab.org/competitions/29930">Access challenge here</a></div>
-      <br><br>
-        <iframe src="https://competitions.codalab.org/competitions/leaderboard_widget/29930/" style="height: 500px; width: 100%; border: none;"></iframe>
     </div>
 </div>
 <hr class="hrLine">
@@ -214,7 +212,7 @@
 <!--------------------------------------------LEADERBOARD SECTION STARTS--------------------------------------------------->
 
 <div id="leaderboard" class="container padding-64 backgroundTheme center">
-  <h2 id="headings"><span class="bottombar">LEADERBOARD5</span></h2>
+  <h2 id="headings"><span class="bottombar">LEADERBOARD</span></h2>
   <div class ="setFontSize"> <span class="headingInSection center"><h2 id="leaderboard1">OKVQA</h2></span></div>
   <div id="okvqa_leaderboard_table"></div>
   <div class ="setFontSize"> <span class="headingInSection center"><h2 id="leaderboard2">S3VQA</h2></span></div>
@@ -280,7 +278,7 @@
   $(document).ready(function(){
   $('.header').ready(function(){
    $.ajax({
-    url:"okvqa.csv",
+    url:"okvqa1.csv",
     dataType:"text",
     success:function(data)
     {
